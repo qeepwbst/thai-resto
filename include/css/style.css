@@ -1005,16 +1005,21 @@ ul:not([class]) > li:before {
   margin: 0 auto;
 }
 .online-content button {
-  background: #ffce1c;
-  padding: 30px;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 140%;
-  border: 3px dashed #000;
-  width: 250px;
-  height: 250px;
-  border-radius: 100%;
+  padding: 25px 30px;
+  font-size: 28px;
+  font-weight: 600;
+
   color: #121218;
+  background-color: #ffce1c;
+  border: solid 1px #ffce1c;
+  width: 250px;
+
+  border-radius: 100px;
+}
+.online-content button:hover {
+  color: #ffce1c;
+  background-color: #121218;
+  border-color: #ffce1c;
 }
 /* ================= home Content End ================= */
 
@@ -1556,14 +1561,16 @@ ul:not([class]) > li:before {
   margin: 0;
 }
 
-.footer-right span {
+.footer-right span,
+.footer-right a {
   font-weight: 400;
-  font-size: 20px !important;
+  font-size: 16px !important;
   line-height: 25px;
   /* identical to box height, or 227% */
   text-align: center;
   color: #ededed;
 }
+
 .footer-bottom .share-content {
   justify-content: flex-start;
 }
@@ -1819,7 +1826,7 @@ ul:not([class]) > li:before {
     margin: 0 auto;
   }
   body {
-    padding-bottom: 516px;
+    padding-bottom: 498px;
   }
   .timing-content {
     flex-wrap: wrap;
@@ -1851,7 +1858,7 @@ ul:not([class]) > li:before {
 @media (max-width: 767.98px) {
   body {
     padding-top: 60px;
-    padding-bottom: 788px;
+    padding-bottom: 567px;
   }
   .footer-left {
     width: 50%;
