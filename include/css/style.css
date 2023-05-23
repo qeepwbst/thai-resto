@@ -1,5 +1,8 @@
 /*1. Animate css, 2. Smartmenus css, 3. Slick css, 4. Reset css, 5. Core css, 6. custom css*/
 /* =================animate css starts here================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -1084,17 +1087,43 @@ ul:not([class]) > li:before {
   flex-wrap: wrap;
   width: 100%;
   padding: 40px 0;
-  gap: 40px 0;
 }
 
-.home-menu-box {
+.home-menu-left,
+.home-menu-right {
   max-width: 45%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px 0;
   overflow: hidden;
 }
 
+.home-menu-img {
+  position: relative;
+}
+
+.home-menu-img::before {
+  position: absolute;
+  content: attr(data-value);
+  top: 25px;
+  left: 25px;
+  font-family: "Pirata One", cursive;
+  font-size: 20px;
+  text-transform: capitalize;
+  width: 90px;
+  height: 90px;
+  background: #ffce1c;
+  color: #000;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .home-menu-img img {
-  /* height: 400px; */
+  height: 300px;
   width: 100%;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
@@ -1123,7 +1152,7 @@ ul:not([class]) > li:before {
 .home-menu-list-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   background: rgb(0 0 0 / 50%);
   border-radius: 0 0 10px 10px;
   padding: 20px;
@@ -1132,6 +1161,7 @@ ul:not([class]) > li:before {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  column-gap: 10px;
 }
 
 .home-menu-text h4 {
@@ -1146,15 +1176,16 @@ ul:not([class]) > li:before {
   font-weight: 600;
   font-size: 16px;
   line-height: 25px;
-  text-align: center;
+  /* text-align: center; */
   color: #ffce1c;
 }
 
 .home-menu-list p {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 25px;
-  color: #ededed;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #b9b9b9;
+  letter-spacing: 0.008rem;
 }
 .menu-list-color {
   background: rgba(255, 206, 28, 0.8);
@@ -1169,6 +1200,63 @@ ul:not([class]) > li:before {
 }
 .menu-list-color p {
   color: #121218;
+}
+.banquet-title p{
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+.banquet-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 50px 0;
+  max-width: 75%;
+  margin: 0px auto;
+}
+.banquet-grid h2 {
+  line-height: 48px;
+  text-align: left;
+}
+.banquet-grid h6 {
+  color: #ffffff;
+  margin: 0;
+  text-align: right;
+}
+.banquet-menu {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.banquet-menu p {
+  color: #ffffff;
+  margin: 0;
+  font-size: 20px;
+}
+.terms-section {
+  padding-top: 40px;
+  border-top: 1px solid rgb(255 206 28 / 40%);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.terms-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+.terms-section li {
+  color: #ffffff;
+  font-size: 14px;
+  max-width: 45%;
+  width: 100%;
+  margin-bottom: 10px !important;
+  padding-left: 0 !important;
 }
 
 /* ================= menu Content end ================= */
@@ -1810,6 +1898,7 @@ ul:not([class]) > li:before {
 @media (max-width: 991.98px) {
   .home-menu-box {
     max-width: 70%;
+    width: 100%;
     margin: 0 auto;
   }
   .footer-content {
@@ -1850,6 +1939,22 @@ ul:not([class]) > li:before {
   .footer-bottom .share-content {
     justify-content: center;
     padding: 20px 0;
+  }
+  .home-menu-left, .home-menu-right {
+    max-width: 100%;
+  }
+  .banquet-grid {
+    justify-content: center;
+    padding: 30px 0px;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banquet-left, .banquet-right {
+    width: 56%;
+  }
+  .banquet-menu {
+    padding-top: 20px;
   }
 }
 /* =================================================  
@@ -1911,6 +2016,70 @@ ul:not([class]) > li:before {
   }
   .footer-center img {
     width: 200px;
+  }
+  .home-menu-box {
+    max-width: 90%;
+  }
+  .home-menu-img img {
+    height: 200px;
+  }
+  .home-menu-img::before {
+    font-size: 14px;
+    width: 75px;
+    height: 75px;
+    top: 20px;
+    left: 20px;
+    line-height: 18px;
+  }
+  .home-menu-list-content {
+    padding: 20px 5px;
+  }
+  .home-menu-left, .home-menu-right {
+    gap: 20px;
+  }
+  .home-menu-text h4 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .home-menu-text span {
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 22px;
+  }
+  .menu-77.home-menu-text h4 {
+    white-space: nowrap;
+  } 
+  .menu-77.home-menu-text span {
+    white-space: normal;
+    text-align: right;
+  } 
+  .home-menu-grid {
+    padding-bottom: 0px;
+  }
+  .banquet-title h2 {
+    font-size: 26px;
+    line-height: 40px;
+  }
+  .banquet-grid {
+    max-width: 100%;
+    gap: 20px;
+    padding: 20px 0px;
+  }
+  .banquet-left, .banquet-right {
+      width: 80%;
+  }
+  .banquet-grid h2 {
+    font-size: 26px;
+  }
+  .banquet-grid h6 {
+    text-align: center;
+    font-size: 18px;
+  }
+  .banquet-menu p {
+    font-size: 16px;
+  }
+  .terms-section li {
+    max-width: 100%;
   }
 }
 /* ======================================================
