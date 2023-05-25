@@ -149,7 +149,97 @@
             <div class="menu-content">
               <h2>Our <span>Menu</span></h2>
               <div class="home-menu-grid">
-                <div class="home-menu-left">
+                <div class="home-menu-image-grid">
+                  <div class="column">
+                    <img src="./include/images/menu-images/menu-1.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                  </div>
+                  <div class="column">
+                    <img src="./include/images/menu-images/menu-2.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                  </div>
+                  <div class="column">
+                    <img src="./include/images/menu-images/menu-3.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                  </div>
+                  <div class="column">
+                    <img src="./include/images/menu-images/menu-4.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                  </div>
+                  <div class="column">
+                    <img src="./include/images/menu-images/menu-5.png" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+                  </div>
+                  <div class="column">
+                    <img src="./include/images/menu-images/menu-6.png" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+                  </div>
+                </div>
+                
+                <div id="myModal" class="menu-modal">
+                  <span class="close cursor" onclick="closeModal()">&times;</span>
+                  <div class="modal-content-grid">
+                
+                    <div class="mySlides">
+                      <div class="numbertext">1 / 6</div>
+                      <img src="./include/images/menu-images/menu-1.png" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                      <div class="numbertext">2 / 6</div>
+                      <img src="./include/images/menu-images/menu-2.png" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                      <div class="numbertext">3 / 6</div>
+                      <img src="./include/images/menu-images/menu-3.png" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides">
+                      <div class="numbertext">4 / 6</div>
+                      <img src="./include/images/menu-images/menu-4.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                      <div class="numbertext">5 / 6</div>
+                      <img src="./include/images/menu-images/menu-5.png" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides">
+                      <div class="numbertext">6 / 6</div>
+                      <img src="./include/images/menu-images/menu-6.png" style="width:100%">
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                    <div class="caption-container">
+                      <p id="caption"></p>
+                    </div>
+                
+                <div class="menu-dots-grid">
+
+               
+                    <div class="column">
+                      <img class="demo cursor" src="./include/images/menu-images/menu-1.png" style="width:100%" onclick="currentSlide(1)" >
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="./include/images/menu-images/menu-2.png" style="width:100%" onclick="currentSlide(2)" >
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="./include/images/menu-images/menu-3.png" style="width:100%" onclick="currentSlide(3)" >
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="./include/images/menu-images/menu-4.png" style="width:100%" onclick="currentSlide(4)" >
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="./include/images/menu-images/menu-5.png" style="width:100%" onclick="currentSlide(5)" >
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="./include/images/menu-images/menu-6.png" style="width:100%" onclick="currentSlide(6)" >
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="grandma-image">
+                  <img  src="./include/images/menu-images/grandma-crop.png" style="width:100%" >
+                  <h6>My Grandma Recipe. Thai street food. Spicy I'm Thai</h6>
+                </div>
+                 <!-- <div class="home-menu-left">
                   <div class="home-menu-box">
                     <div class="home-menu-img" data-value="Starters">
                       <img src="./include/images/starter.png" />
@@ -1062,7 +1152,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> 
               </div>
               <div class="banquet-section">
                 <div class="banquet-title">
@@ -1113,7 +1203,7 @@
                     without prior notice.</li>
                   <li>* No separate bill</li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -1573,5 +1663,61 @@
     <script src="include/js/bootstrap.min.js"></script>
     <script src="include/js/main.js"></script>
     <script src="include/js/custom.js"></script>
+    <script>
+      const scroll = () => {
+            const section = document.querySelector( '#myModal' );
+            section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+      };
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        scroll();
+        var a = document.body;
+        if (a.classList) {
+          a.classList.add('menu-modal-style');
+
+        } else {
+          a.className += 'menu-modal-style';
+        }
+      }
+      
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        var a = document.body;
+        if (a.classList) {
+          a.classList.remove('menu-modal-style');
+        } else {
+          a.className -= 'menu-modal-style';
+        }
+      }
+      
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      </script>
   </body>
 </html>
